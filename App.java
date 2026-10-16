@@ -12,8 +12,13 @@ public class App {
         double camisaPremium = 99000;
         boolean indicador = true;
         double valorTotal = 0;
-        double valorDescuento;
-        double valorFinal; 
+        double valorDescuento = 0;
+        double valorFinal;
+        int contadorBasica = 0;
+        int contadorMedio = 0;
+        double contadorPremium = 0;
+        double contadorTotal = 0;
+        double porcentajePremium;
 
                 System.out.println("Bienvenido al catalogo de prendas!");
 
@@ -27,10 +32,13 @@ public class App {
 
                 if (seleccionadorDos.equals("1")) {
                     valorTotal += camisaBasica;
+                    contadorBasica++;
                 } else if (seleccionadorDos.equals("2")) {
                     valorTotal += camisaMedio;
+                    contadorMedio++;
                 } else if (seleccionadorDos.equals("3")) {
                     valorTotal += camisaPremium;
+                    contadorPremium++;
                 } else {
                     System.out.println("No se ingreso un valor correcto");
                 }
@@ -44,7 +52,21 @@ public class App {
             valorFinal = valorDescuento + (valorDescuento * iva);
         } else {
             valorFinal = valorTotal + (valorTotal * iva);
-        } System.out.println(valorFinal);
+        } contadorTotal = contadorBasica + contadorMedio + contadorPremium; 
+        porcentajePremium = 100 * (contadorPremium / contadorTotal);
+
+        System.out.println("=============== FACTURA ===============");
+        System.out.println("Cantidad de camisas basicas: " + contadorBasica);
+        System.out.println("Cantidad de camisas Medio: " + contadorMedio);
+        System.out.println("Cantidad de camisas Premium: " + contadorPremium);
+        System.out.println("Cantidad de prendas adquiridas: " + contadorTotal);
+        System.out.println("Valor Bruto de las prendas: " + valorTotal );
+        if (valorTotal > 100000) {
+            System.out.println("Valor Con descuento: " + valorDescuento);
+        } else{
+        } System.out.println("Valor con IVA: " + valorFinal);
+        System.out.println("El porcentaje de prendas Premium es de: " + porcentajePremium + "%");
+        System.out.println("========== GRACIAS POR TU COMPRA ==========");
     }
 }
 
