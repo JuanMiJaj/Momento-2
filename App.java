@@ -40,12 +40,12 @@ public class App {
                     valorTotal += camisaPremium;
                     contadorPremium++;
                 } else {
-                    System.out.println("No se ingreso un valor correcto");
+                    System.out.println("No se ingreso un valor incorrecto");
                 }
             } else if (seleccionador.equals("2")) {
                 indicador = false;
             } else {
-                System.out.println("No se ingreso un valor corrrecto");
+                System.out.println("No se ingreso un valor incorrrecto");
             }
         } if (valorTotal > 100000) {
             valorDescuento = valorTotal - (valorTotal * descuento);
@@ -67,6 +67,7 @@ public class App {
         } System.out.println("Valor con IVA: " + valorFinal);
         System.out.println("El porcentaje de prendas Premium es de: " + porcentajePremium + "%");
         System.out.println("========== GRACIAS POR TU COMPRA ==========");
+    leer.close();
     }
 }
 
